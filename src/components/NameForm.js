@@ -3,7 +3,12 @@ import useForm from '../hooks/useForm'
 
 function NameForm() {
   // get these back from useForm
-  const { handleSubmit, handleChange, ...state } = useForm()
+  const { handleSubmit, handleChange, ...state } = useForm({
+    initialValues: {
+      name: '',
+      email: ''
+    }
+  })
 
   return (
     <form onSubmit={handleSubmit}>
@@ -14,7 +19,7 @@ function NameForm() {
         <input
           id="name"
           type="text"
-          value={state.value}
+          value={state.name}
           onChange={handleChange}
         />
       </div>
@@ -25,7 +30,7 @@ function NameForm() {
         <input
           id="email"
           type="text"
-          value={state.value}
+          value={state.email}
           onChange={handleChange}
         />
       </div>

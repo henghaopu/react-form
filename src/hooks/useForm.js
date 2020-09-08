@@ -1,4 +1,13 @@
+function reducer(state, actions) {
+  return state
+}
+
 function useForm(props) {
+  const [state, dispatch] = React.useReducer(reducer, {
+    values: props.initialValues,
+    errors: {},
+    touched: {}
+  })
   // handleChange(event) {
   //   this.setState({ [event.target.id]: event.target.value })
   // }
