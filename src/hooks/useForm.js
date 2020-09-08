@@ -12,3 +12,5 @@ function useForm(props) {
 
   return {}
 }
+
+export default useForm
